@@ -10,8 +10,8 @@ int main(int ac, char **av)
 {
 	char const *const file_name = av[1];
 	FILE *file;
-	char line[1024];
-	long int n;
+	char line[2048];
+	unsigned long long int n;
 
 
 	if (ac == 2)
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		while (fgets(line, sizeof(line), file))
 		{
 			line[strcspn(line, "\n")] = '\0';
-			n = (long int)atoi(line);
+			n = strtoll(line, NULL, 10);
 			find_factors(n);
 		}
 

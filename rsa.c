@@ -6,7 +6,7 @@
  * @num: the sample number
  * Return: 1 if number is prime else 0
  */
-int is_prime(long int num)
+int is_prime(unsigned long long int num)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int is_prime(long int num)
  * @num: the sample number
  * Return: 1 if number is even else 0
  */
-int is_even(long int num)
+int is_even(unsigned long long int num)
 {
 	if (num <= 1)
 		return (0);
@@ -41,13 +41,13 @@ int is_even(long int num)
  * @num: the number
  * Return: Nothing
  */
-void find_factors(long int num)
+void find_factors(unsigned long long int num)
 {
-	long int f;
+	unsigned long long int f;
 
 	if (is_prime(num))
 	{
-		printf("%lu=%lu*%d\n", num, num, 1);
+		printf("%llu=%llu*%d\n", num, num, 1);
 		return;
 	}
 
@@ -55,7 +55,7 @@ void find_factors(long int num)
 	{
 		if (is_even(num))
 		{
-			printf("%lu=%lu*%d\n", num, num / 2, 2);
+			printf("%llu=%llu*%d\n", num, num / 2, 2);
 			return;
 		}
 	}
@@ -65,7 +65,7 @@ void find_factors(long int num)
 	{
 		if (num % f == 0)
 		{
-			printf("%lu=%lu*%lu\n", num, num / f, f);
+			printf("%llu=%llu*%llu\n", num, num / f, f);
 			return;
 		}
 		else
