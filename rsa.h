@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-int is_prime(unsigned int);
-int is_even(unsigned int);
-void find_factors(unsigned int);
+int is_prime(long int);
+int is_even(long int);
+void find_factors(long int);
 
 #endif
