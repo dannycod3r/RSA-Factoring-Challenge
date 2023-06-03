@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		{
 			line[strcspn(line, "\n")] = '\0';
 			n = strtoll(line, NULL, 10);
-			find_factors(n);
+			find_factors2(n);
 		}
 
 		fclose(file);

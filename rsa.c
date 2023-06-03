@@ -72,3 +72,33 @@ void find_factors(unsigned long long int num)
 			f += 2;
 	}
 }
+
+/**
+ * find_factors2 - find the prime factors of a given number
+ * @num: the number
+ * Return: Nothing
+ */
+void find_factors2(unsigned long long int num)
+{
+	unsigned long long int f = 2;
+	int found = 0;
+
+	while (f * f <= num)
+	{
+		if (num % f == 0)
+		{
+			if (is_prime(f) && is_prime(num / f))
+			{
+				printf("%llu=%llu*%llu\n", num, num / f, f);
+				found = 1;
+				break;
+			}
+		}
+		f++;
+	}
+
+	if (f * f > num && is_prime(num))
+	{
+		printf("%llu=%llu*%d\n", num, num, 1);
+	}
+}
